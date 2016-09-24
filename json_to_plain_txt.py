@@ -11,18 +11,5 @@ with open('input.json') as data_file:
     print item.encode('utf-8').strip()
     
     if 'desc' in card and card['desc']:
-      count = 0
       for line in card['desc'].splitlines():
-        if count == 0:
-          sys.stdout.write('  "')
-        else:
-          sys.stdout.write('  ')
-
-        sys.stdout.write(line.encode('utf-8').strip())
-
-        if count == len(card['desc'].split('\n'))-1:
-          sys.stdout.write('"')
-
-        sys.stdout.write('\n')
-
-        count += 1
+        print '  ' + line.encode('utf-8').strip()
